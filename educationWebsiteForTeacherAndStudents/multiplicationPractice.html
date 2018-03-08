@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="multPractice_v1.css">
+    <script>
+    var product; 
+    var autoFlag = false;
+    var dim;
+    var timetaken;
+
+    function image(){
+        document.getElementById("display").innerHTML = '<img id="im1" src="math.jpeg"/>';
+        document.getElementById("button").disabled = false;
+    }
+    
+ 
+    function mathToTable(){
+        dim = document.getElementById('dim').value;
+        if (dim>0 && dim<21){ 
+            document.getElementById("button").disabled = true;
+            timetaken = 0;
+            document.getElementById("display").innerHTML = createTable(dim);      
+            Countdown();  
+        }
+    }
+    function createTable(dim){
+        var string = " ";
+        //Declares array that will contain all of the possible numbers
+        var rand = []
+        //counter to increase only when something is added
+        var counter = 0 
+        //for loops to insert every possible value other than 0 into the array
+        for(var k = 0; k<=dim ; k++){
+            for(var l = 0; l<=dim ; l++){
+                if(k!=0 && l!=0){
+                    rand[counter] = k*l;
+                    counter = counter + 1;
+                }
+            }
+        }
+
+        //Select random number from the array 
+        var randnum = rand[Math.floor(Math.random() * rand.length)];
+        //Makes sure that once one of the objects is blanked out no other replica of that number will be blanked out as well.
+        var used = false;
+        // Table creation
+        var string = "<table id='table1'>";
+        var alternate = 0;
+        
+        for (var i = 0; i<=dim ; i++){
+            string = string.concat('<tr>');
+            
+            for(var j = 0; j<= dim; j++){
+                if(i==0 && j==0){
+                    string = string.concat('<td class = "cell3">'+ '</td>');
+                }
+                
+                else if(i==0){
+                    string = string.concat('<td class = "cell3">'+ j + '</td>');
+                }
+                
+                else if(j==0){
+                    string = string.concat('<td class = "cell3">'+ i + '</td>');
+                }
+                else if (i*j == randnum && used==false){
+                    string = string.concat('<td class = "cell'+(alternate)+'">'+"<input class = 'input2' type='text' name='val' id = 'vals'>" + '</td>');
+                    used = true;
+                    product = i*j;
+                    if (alternate == 0){
+                        alternate = 1;
+                    }
+                    else{
+                        alternate = 0;    
+                    }  
+                }
+                else{ 
+                    string = string.concat('<td class = "cell'+(alternate)+'">'+ i*j +'</td>');
+                    if (alternate == 0){
+                        alternate = 1;
+                    }
+                    else{
+                        alternate = 0;    
+                    }
+                }
+                
+            }
+            if (dim%2 == 0 && alternate == 0){
+                alternate = 1
+            } 
+            else if (dim%2 == 0 && alternate == 1){
+                alternate = 0
+            }
+            string = string.concat('</tr>');
+        }
+        string = string.concat('</tr></table>');
+        return string;  
+        
+        
+    }
+
+    function checkAns(){
+        var ans = document.getElementById('vals').value;
+        if (ans == product){
+             document.getElementById("display").innerHTML = "<h3 style='text-align:center;'> CORRECT! GOOD JOB!</h3>";
+        }
+        else{
+             document.getElementById("display").innerHTML ="<h3 style='text-align:center;'> INCORRECT! TRY AGAIN...</h3>" ;
+        }
+        setTimeout(image, 3000);
+    }
+
+    function Countdown(){
+        if (timetaken == 0){
+            displayTimeLeft();
+        }
+        else{
+            setTimeout(displayTimeLeft, 1000);
+        }
+    }
+
+    function displayTimeLeft(){
+        var timeLeft = dim - timetaken;
+        var timeString = timeLeft + ' SECONDS LEFT'
+        timetaken = timetaken + 1;
+        if (timeLeft == 0){
+            document.getElementById("demo").innerHTML = "";
+            checkAns()
+        }
+        else{
+            document.getElementById("demo").innerHTML = timeString;
+            Countdown()
+        }
+    }
+    </script>
+</head>
+    
+<body>
+<center>
+
+    <h1>
+    The Mutiplication Table Challenge
+    </h1>
+    
+    Size: <input type="text" name="in" id = "dim">
+    <input id = "button" type="submit" value="Create Table" onClick = "mathToTable()"> <br>
+    <div id = "display">
+        <br> <br> <br>
+    </div>
+    <script>
+        image();
+    </script>
+    <br> <br>
+    <a href = "index.html"> Return to home page </a>
+
+    <h3 id="demo">
+    </h3>
+</center>
+</body>
+</html>

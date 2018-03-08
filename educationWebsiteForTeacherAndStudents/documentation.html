@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="final_login_v4.css">
+    <div id = "documentation">
+    <a href = "index.html"> Home</a>
+    </div>
+
+    <h1>Documentation Page</h1>
+    <h2>******NOTE: Run create_database.php the first time using this website******</h2>
+    <h3> ******index.html runs the main page</h3>
+
+</head>
+
+    
+<body style = "text-align: left;">
+    
+This education website is for a teacher to create practice assignments that students can then complete as a way to review material.  The purpose is to give students a method of reviewing material, outside of the classroom, while receiving feedback so that they can continue working toward the correct answer.  Thus they can learn in the process of practicing.  There is a special login for the teacher (username: aschwar3 password: 1234).  Once the teacher has logged in, he/she can either create new assignments or select an exisiting assignemnt and add questions to it.  An image can be displayed with the question and all questions will have 4 possible answers. Students can register and once they have an account, they log in using their username and password.  They can then select which assignment to complete and are then brought to the assignment.  Students are required to keep selecting answers until they select the correct answer and then they will be brought to the next question.  There is a link from the login pages to return to the homepage.  From the pages after logging in, there are links to go to previous pages or to logout.
+    <br>
+    <br>
+There are additional features off of the homepage, including a fun math video and multiplication practice.  These pages have a link at the bottom to return to the homepage.
+<br>
+<br>
+I made a visually appealing theme.  The homepage has a cheerful backgroun image and the other pages are all a light yellow.  The login pages include a canvas with a 'Math is Fun!' logo.    
+<br>
+<br>
+Login information is stored in a staff table and a students table within a database called school_db.  A database named assignment_db holds assignment information.  When a teacher creates a new assignemnt, it is added to an assignments table and a table with the assignment name is created.  Each question along with the image name (NULL allowed), 4 possible answers and correct answer are stored in a row of the table with the assignment name.  When the student logs in, the questions from the chosen assignment are displayed one at a time.  Hence questions are stored on the server when the teacher creates them and then it is retreived from the server when students are using the site.  Create table, insert and select statements are used to exchange information with the server.  
+<br>
+<br>
+<table>
+<tr>
+<td> </td> <td> HTML5 </td>   <td> XMLHttpRequest </td> <td> JavaScript </td> <td> PHP </td> <td> MySQL </td>
+</tr>
+<tr>
+<td> Main page </td>   <td> X </td> <td>  </td> <td> X </td> <td>  </td><td> </td>
+</tr>
+<tr>
+<td> Staff/Student login pages </td>   <td> X - Form, Canvas </td> <td>  </td> <td> X </td> <td> X </td><td> X </td>
+</tr>
+<tr>
+<td> Create Assignment/Choose to Edit </td>   <td> X - Form </td> <td> X </td> <td> X </td> <td> X </td><td> X</td>
+</tr>
+<tr>
+<td> Creating Assignment Questions </td>   <td> X - Form </td> <td>  </td> <td>  </td> <td> X </td><td>X </td>
+</tr>
+<tr>
+<td> Student Select Assignment </td>   <td> X </td> <td> X </td> <td> X </td> <td> X </td><td> X</td>
+</tr>
+<tr>
+<td> Student Complete Assignment </td>   <td> X - Form </td> <td>  </td> <td> X </td> <td> X </td><td>X </td>
+</tr>
+<tr>
+<td> Math Video </td>   <td> X - Video </td> <td>  </td> <td>  </td> <td>  </td><td> </td>
+</tr>
+<tr>
+<td> Multiplication Practice </td>  <td> X - Canvas </td> <td>  </td> <td> X </td> <td>  </td><td> </td>
+</tr>
+</table>
+    
+
+</body>
+</html>

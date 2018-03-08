@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+}
+
+#bottomDiv {
+    border-radius: 5px;
+    background: lightgrey;
+    width: 500px;
+    height: auto;
+    text-align: center; 
+    margin : auto;
+    padding: 10px;
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+    text-align: center; 
+
+}
+
+#myCanvas{
+    width: auto;
+    height: 100px;
+    margin:auto;
+    padding: 10px;
+    
+}
+table {
+    border-collapse: collapse;
+    align-content: center;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    align-content: center;
+    margin: auto;
+    padding: 5px;
+}
+
+#documentation{
+    text-align: right;
+}

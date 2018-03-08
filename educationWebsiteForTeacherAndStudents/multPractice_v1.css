@@ -1,0 +1,16 @@
+@keyframes color1{
+    0% {background-color:orangered;}
+    50% {background-color: deepskyblue;}
+}
+@keyframes color2{
+    0% {background-color:deepskyblue;}
+    50% {background-color: orangered;}
+}
+
+body {background-color: lightgoldenrodyellow;}
+.cell0{background-color:orangered;animation:color1 12s infinite;animation-timing-function: ease-in-out;}
+.cell1{background-color:deepskyblue;animation:color2 12s infinite;animation-timing-function: ease-in-out;}
+.cell3{background-color:lightgoldenrodyellow;}
+td {border: 2px solid blue; text-align: center;width: 40%; border-collapse: collapse}
+#table1{table-layout: fixed;border: 2px solid blue; text-align: center;width: 80%; border-collapse: collapse;border-width: 60%}
+.input2{ width: 60%; padding:0px; }

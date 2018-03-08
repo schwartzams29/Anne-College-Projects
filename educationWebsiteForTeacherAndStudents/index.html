@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 
+Anne Schwartz
+Final Project
+May 10, 2017
+
+This program allows a teacher to login to create homework assignments and assessments
+Students can then login and answer the questions, getting immediate feedback and a grade
+
+*****NOTE: Run create_database.php first*****
+-->
+
+<html>
+<head>
+    <link rel="stylesheet" href="final_v1.css">
+
+</head>
+
+<body>
+    <div id = "documentation">
+    <a href = "documentation.html"> Documentation</a>
+    </div>
+    <h1>Assignments with Immediate Feedback</h1>
+
+    <div id = "text">
+    Welcome to our class website.  You will complete homework assignments on this website so that you can get immediate feedback and learn from your mistakes.  I will not be able to see your results so this is solely for your benefit in learning the material.  The goal is for you to utlize the feedback to get to the correct answer and learn in the process! 
+        <br>
+        <br>
+    </div>
+    
+    <div id = "bottomDiv">
+    Let's get started!  Click the appropriate button to login! <br> 
+    <input class = "button" type="submit" value="Student" onclick="load('student_assigmentChoice.php')">
+    <input class = "button" type="submit" value="Teacher" onclick="load('createQuestions.php')">
+        <br> 
+        Or choose one of these extra features! <br> 
+    <input class = "button" type="submit" value="Multiplication Practice" onclick="load('multiplicationPractice.html')">
+    <input class = "button" type="submit" value="Fun Math Video" onclick="load('mathVideo.html')">
+
+    </div>
+    
+    <script>
+    function load(file){
+        window.location.href = file;
+      
+    }
+  </script>
+    
+</body>
+</html>
